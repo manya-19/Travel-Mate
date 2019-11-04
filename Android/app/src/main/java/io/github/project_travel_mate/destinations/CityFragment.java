@@ -22,7 +22,9 @@ import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
@@ -81,7 +83,7 @@ public class CityFragment extends Fragment implements TravelmateSnackbars {
     private Activity mActivity;
     private Handler mHandler;
     private String mToken;
-
+    private Button mButton;
     private int mSpotlightShownCount;
     private SharedPreferences mSharedPreferences;
 
@@ -116,6 +118,14 @@ public class CityFragment extends Fragment implements TravelmateSnackbars {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
         mToken = mSharedPreferences.getString(USER_TOKEN, null);
         mSpotlightShownCount = mSharedPreferences.getInt(SPOTLIGHT_SHOW_COUNT, 0);
+        mButton = view.findViewById( R.id.button8 );
+        mButton.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( getContext() , Distances.class );
+                startActivity( intent );
+            }
+        } );
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
         mToken = sharedPreferences.getString(USER_TOKEN, null);

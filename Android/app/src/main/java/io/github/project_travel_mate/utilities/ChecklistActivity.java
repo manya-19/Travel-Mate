@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.Objects;
 
@@ -24,7 +25,7 @@ public class ChecklistActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        Toast.makeText( this, "test", Toast.LENGTH_SHORT ).show();
         ButterKnife.bind(this);
 
         Fragment fragment;

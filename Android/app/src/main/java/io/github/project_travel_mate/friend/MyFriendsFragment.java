@@ -2,6 +2,7 @@ package io.github.project_travel_mate.friend;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,7 +29,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.github.project_travel_mate.R;
+import io.github.project_travel_mate.mytrips.AddNewTripActivity;
 import objects.User;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -68,7 +71,6 @@ public class MyFriendsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_my_friends, container, false);
         ButterKnife.bind(this, view);
-
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
         mToken = sharedPreferences.getString(USER_TOKEN, null);
         mHandler = new Handler(Looper.getMainLooper());
@@ -142,7 +144,12 @@ public class MyFriendsFragment extends Fragment {
         });
     }
 
+    @OnClick(R.id.add_friend)
+    void addFriend() {
+        Intent intent = new Intent(getContext(), Main2Activity.class);
+        startActivity(intent);
 
+    }
     /**
      * Plays the network lost animation in the view
      */

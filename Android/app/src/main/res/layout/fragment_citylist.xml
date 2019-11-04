@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<android.support.design.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/citylist_fragemnt_id"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -43,7 +42,7 @@
         <ListView
             android:id="@+id/cities_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="603dp"
             android:cacheColorHint="@android:color/transparent"
             android:divider="@null"
             android:fastScrollEnabled="true"
@@ -63,6 +62,13 @@
             android:layout_height="wrap_content" />
 
     </FrameLayout>
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:text="Click to know distance of cities"
+        android:textColor="@color/dark_grey" />
 
 </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>
